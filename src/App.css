@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.buttons {
+    display: flex;
+    height: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar {
+    background-color: #0d47a1 !important;
+    padding: 1rem 3rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar-brand {
+    color: white !important;
 }
 
-.App-link {
-  color: #61dafb;
+.search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #d3d2d2;
+    padding: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-input {
+    height: 40px;
+    width: 400px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie {
+    background-color: #3f51b5;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 1rem;
+    width: 300px;
+    position: relative;
+}
+
+.movie img {
+    object-fit: cover;
+    height: 80%;
+    width: 100%;
+}
+
+.movie-info {
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    height: 20%;
+}
+
+.movie-info h3 {
+    margin: 0;
+}
+
+.movie-over {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    color: black;
+    overflow: auto;
+    max-height: 100%;
+    padding: 1rem;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+}
+
+.movie-over h2 {
+    text-align: center;
+}
+
+.movie:hover .movie-over {
+    transform: translateX(0%);
+}
+
+.tag {
+    border-radius: 5px;
+    padding: 0.7rem;
+    font-weight: bold;
+}
+
+.tag.green {
+    background-color: #1b5e20;
+}
+
+.tag.orange {
+    background-color: #f57f17;
+}
+
+.tag.red {
+    background-color: #7f0000;
 }
