@@ -29,7 +29,7 @@ export default function MovieCard({
       </div>
 
       <div className="movie-over">
-        <h2> Overview</h2>
+        <h2> {title}</h2>
         <p>{overview}</p>
         <h5>Release Date : {release_date}</h5>
       </div>

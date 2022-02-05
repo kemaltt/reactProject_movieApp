@@ -49,7 +49,7 @@ export default function Main() {
       </form>
       <div className="movie-container">
         {movies.map((movie) => {
-          console.log(movie);
+          //console.log(movie);
           return (
             <MovieCard
               key={movie.id}
