@@ -3,10 +3,10 @@ import React, { useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard";
 
 const UNFILTERED =
-  "https://api.themoviedb.org/3/discover/movie?api_key=d6278b3dc3e6f8f8376a89851c3f8c8f";
+  "https://api.themoviedb.org/3/discover/movie?api_key=cb3474c672bd70d204dd4ab6d178f560";
 
 const FILTERED =
-  "https://api.themoviedb.org/3/search/movie?api_key=d6278b3dc3e6f8f8376a89851c3f8c8f&query=";
+  "https://api.themoviedb.org/3/search/movie?api_key=cb3474c672bd70d204dd4ab6d178f560&query=";
 
 export default function Main() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -34,12 +34,16 @@ export default function Main() {
         <input
           className="search-input"
           type="searc"
-          placeholder="Search a movie.."
+          placeholder=" Search a movie..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
 
-        <button className="btn btn-primary" type="submit" value="Search">
+        <button
+          className="btn btn-outline-primary"
+          type="submit"
+          value="Search"
+        >
           Search
         </button>
       </form>
