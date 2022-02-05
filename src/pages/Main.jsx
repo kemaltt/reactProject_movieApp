@@ -49,6 +49,7 @@ export default function Main() {
       </form>
       <div className="movie-container">
         {movies.map((movie) => {
+          console.log(movie);
           return (
             <MovieCard
               key={movie.id}
@@ -56,6 +57,7 @@ export default function Main() {
               poster_path={movie.poster_path}
               overview={movie.overview}
               vote_average={movie.vote_average}
+              release_date={movie.release_date}
             />
           );
         })}

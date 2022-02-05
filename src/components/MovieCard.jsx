@@ -7,6 +7,7 @@ export default function MovieCard({
   poster_path,
   overview,
   vote_average,
+  release_date,
 }) {
   const setVoteClass = (vote) => {
     if (vote >= 8) {
@@ -26,9 +27,11 @@ export default function MovieCard({
           {vote_average}
         </span>
       </div>
+
       <div className="movie-over">
         <h2> Overview</h2>
         <p>{overview}</p>
+        <h5>Release Date : {release_date}</h5>
       </div>
     </div>
   );

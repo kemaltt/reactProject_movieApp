@@ -82,7 +82,8 @@
     transition: transform 0.4s ease-in-out;
 }
 
-.movie-over h2 {
+.movie-over h2,
+h5 {
     text-align: center;
 }
 
