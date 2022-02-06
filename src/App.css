@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Mitr:wght@500&display=swap");
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +12,11 @@
 .navbar {
     background-color: #0d47a1 !important;
     padding: 1rem 3rem;
+}
+
+.navbar a {
+    font-family: Mitr;
+    font-size: 2.3rem;
 }
 
 .navbar-brand {
@@ -107,4 +113,51 @@ h5 {
 
 .tag.red {
     background-color: #7f0000;
+}
+
+.login {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.login-form {
+    flex: 1;
+    padding: 4rem;
+    color: black;
+    background-color: white;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.form-label {
+    padding-left: 1.5rem;
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+}
+
+.form-control {
+    width: 90%;
+    margin: 20px;
+}
+
+.register {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.register-form {
+    flex: 1;
+    padding: 4rem;
+    color: black;
+    background-color: white;
+}
+
+.register-control {
+    width: 90%;
+    margin: 20px;
 }
