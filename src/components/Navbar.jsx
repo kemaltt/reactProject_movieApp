@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light d-flex justify-content-between">
-        <a className="navbar-brand" href="/">
+        <a className="navbar-brand" href="/reactProject-movieApp/">
           React Movie App
         </a>
         {/* <button
