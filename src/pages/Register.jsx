@@ -13,7 +13,7 @@ export default function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (firstName && lastName && email && password) {
-      navigate("/reactProject-movieApp/");
+      navigate("/");
     } else {
       setAlertClass("alert alert-danger");
     }

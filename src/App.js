@@ -13,7 +13,7 @@ const App = () => {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/reactProject-movieApp/" element={<Main />} />
+          <Route path="/" element={<Main />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>

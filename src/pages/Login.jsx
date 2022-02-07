@@ -10,7 +10,7 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email && password) {
-      navigate("/reactProject-movieApp/");
+      navigate("/");
     } else {
       setAlertClass("alert alert-danger");
     }

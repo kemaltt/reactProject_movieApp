@@ -42,7 +42,6 @@ export default function Main() {
 
   useEffect(() => {
     getMovies(UNFILTERED);
-    console.log(process.env.REACT_APP_API_KEY);
   }, []);
 
   if (loading) {
@@ -53,7 +52,6 @@ export default function Main() {
     content = (
       <div className="movie-container">
         {movies.map((movie) => (
-          //console.log(movie);
           <MovieCard
             key={movie.id}
             title={movie.title}
