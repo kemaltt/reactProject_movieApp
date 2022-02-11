@@ -1,23 +1,38 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import AuthContext from "../contexts/AuthContext";
 
 export default function Register() {
+  const { userInfo, handleUserInfo } = useContext(AuthContext);
   const navigate = useNavigate();
   const [firstName, setFirstName] = useState();
   const [lastName, setlastName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [alertClass, setAlertClass] = useState("alert alert-danger d-none");
+  const [alertClass, setAlertClass] = useState("alert alert-success d-none");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (firstName && lastName && email && password) {
-      navigate("/");
-    } else {
-      setAlertClass("alert alert-danger");
-    }
+    handleUserInfo(firstName, lastName, email, password);
+    setFirstName("");
+    setlastName("");
+    setEmail("");
+    setPassword("");
+    setAlertClass("alert alert-success");
+
+    setTimeout(() => {
+      navigate("/login");
+    }, 1000);
+
+    // if (firstName && lastName && email && password) {
+    //   navigate("/");
+    // } else {
+    //   setAlertClass("alert alert-danger");
+    // }
   };
+
+  console.log(userInfo);
 
   return (
     <React.Fragment>
@@ -31,12 +46,16 @@ export default function Register() {
         </div>
         <div className="register-form">
           <div className={alertClass} role="alert">
-            Please fill in the blanks!!!
+            You have registered successfully!!!
           </div>
-          <h1 className="form-title display-3">Register</h1>
-          <form onSubmit={handleSubmit} id="register">
+          <h1 className="form-title display-4">Register</h1>
+          <form
+            onSubmit={(e) => handleSubmit(e)}
+            className="px-3"
+            id="register"
+          >
             <div className="mb-3">
-              <label for="first-name" className="form-label display-4">
+              <label for="first-name" className="form-label ">
                 First Name
               </label>
               <input
@@ -45,10 +64,12 @@ export default function Register() {
                 id="first-name"
                 placeholder="Enter your first name..."
                 onChange={(e) => setFirstName(e.target.value)}
+                value={firstName}
+                required
               />
             </div>
             <div className="mb-3">
-              <label for="last-name" className="form-label display-4">
+              <label for="last-name" className="form-label ">
                 Last Name
               </label>
               <input
@@ -57,10 +78,12 @@ export default function Register() {
                 id="last-name"
                 placeholder="Enter your last name..."
                 onChange={(e) => setlastName(e.target.value)}
+                value={lastName}
+                required
               />
             </div>
             <div className="mb-3">
-              <label for="email" className="form-label display-4">
+              <label for="email" className="form-label">
                 Email
               </label>
               <input
@@ -69,10 +92,12 @@ export default function Register() {
                 id="email"
                 placeholder="Enter your email address..."
                 onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                required
               />
             </div>
             <div className="mb-3">
-              <label for="password" className="form-label display-4">
+              <label for="password" className="form-label">
                 Password
               </label>
               <input
@@ -81,6 +106,8 @@ export default function Register() {
                 id="password"
                 placeholder="Enter your password..."
                 onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                required
               />
             </div>
             <input

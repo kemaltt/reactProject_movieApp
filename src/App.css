@@ -130,18 +130,18 @@ h5 {
 
 .form-title {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .form-label {
     padding-left: 1.5rem;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     font-size: 1.5rem;
 }
 
 .form-control {
     width: 90%;
-    margin: 20px;
+    margin: 1rem;
 }
 
 .register {
@@ -152,7 +152,7 @@ h5 {
 
 .register-form {
     flex: 1;
-    padding: 4rem;
+    padding: 2rem;
     color: black;
     background-color: white;
 }
