@@ -1,16 +1,31 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../contexts/AuthContext";
 
 export default function Navbar() {
   const { userInfo, handleLogOut, login } = useContext(AuthContext);
   const navigate = useNavigate();
+  let navbar;
+  let btnColor;
+  let navBrand;
 
+  if (login) {
+    navbar = "navbar-2";
+    btnColor = "btn btn-outline-warning btn-lg mx-2";
+    navBrand = "navbar-brand text-danger";
+  } else {
+    navbar = "navbar-1";
+    btnColor = "btn btn-outline-light btn-lg mx-2";
+    navBrand = "navbar-brand text-light";
+  }
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light d-flex justify-content-between">
-        <a className="navbar-brand" href="/">
-          React Movie App
+      <nav
+        className="navbar navbar-expand-lg navbar-light d-flex justify-content-between"
+        id={navbar}
+      >
+        <a className={navBrand} href="/">
+          React Movie
         </a>
 
         <div className="buttons ">
@@ -19,10 +34,7 @@ export default function Navbar() {
               <h3 className="text-capitalize text-light">
                 {userInfo.firstName + " " + userInfo.lastName}
               </h3>
-              <button
-                onClick={handleLogOut}
-                className="btn btn-outline-light btn-lg mx-2"
-              >
+              <button onClick={handleLogOut} className={btnColor}>
                 Log Out
               </button>
             </div>

@@ -9,8 +9,13 @@
     height: 50px;
 }
 
-.navbar {
+#navbar-1 {
     background-color: #0d47a1 !important;
+    padding: 1rem 3rem;
+}
+
+#navbar-2 {
+    background-color: #2c2d2e !important;
     padding: 1rem 3rem;
 }
 
@@ -19,9 +24,10 @@
     font-size: 2.3rem;
 }
 
-.navbar-brand {
+
+/* .navbar-brand {
     color: white !important;
-}
+} */
 
 .search {
     width: 100%;

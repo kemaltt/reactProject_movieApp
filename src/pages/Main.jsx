@@ -1,8 +1,9 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Loading from "../components/Loading";
 import MovieCard from "../components/MovieCard";
 import NotFound from "../components/NotFound";
+import AuthContext from "../contexts/AuthContext";
 
 const UNFILTERED = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}`;
 
@@ -14,6 +15,8 @@ export default function Main() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [notFound, setNotFound] = useState(false);
+  let searchBtn;
+  const { login } = useContext(AuthContext);
 
   const getMovies = (API) => {
     setLoading(true);
@@ -34,9 +37,17 @@ export default function Main() {
       });
   };
 
+  login
+    ? (searchBtn = "btn btn-outline-secondary font-weight-bold ")
+    : (searchBtn = "btn btn-outline-primary");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    getMovies(FILTERED + searchTerm);
+
+    login
+      ? getMovies(FILTERED + searchTerm)
+      : alert("Please log in to make a search");
+
     setSearchTerm("");
   };
 
@@ -76,11 +87,7 @@ export default function Main() {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
 
-        <button
-          className="btn btn-outline-primary"
-          type="submit"
-          value="Search"
-        >
+        <button className={searchBtn} type="submit" value="Search">
           Search
         </button>
       </form>

@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { AuthContextProvider } from "./contexts/AuthContext";
+import Overview from "./pages/Overview";
 
 const App = () => {
   return (
@@ -16,8 +17,10 @@ const App = () => {
           <Navbar />
           <Routes>
             <Route path="/" element={<Main />} />
+            <Route path="/reactProject_movieApp/" element={<Main />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/overview" element={<Overview />} />
           </Routes>
         </AuthContextProvider>
       </Router>
