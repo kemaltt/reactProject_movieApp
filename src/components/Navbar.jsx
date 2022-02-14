@@ -18,13 +18,19 @@ export default function Navbar() {
     btnColor = "btn btn-outline-light btn-lg mx-2";
     navBrand = "navbar-brand text-light";
   }
+
+  const handleBrand = (e) => {
+    e.preventDefault();
+
+    login ? navigate("/") : alert("Please log in to make a search");
+  };
   return (
     <div>
       <nav
         className="navbar navbar-expand-lg navbar-light d-flex justify-content-between"
         id={navbar}
       >
-        <a className={navBrand} href="/">
+        <a onClick={handleBrand} className={navBrand} href="">
           React Movie
         </a>
 
