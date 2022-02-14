@@ -35,15 +35,13 @@ export default function MovieCard({
   };
   return (
     <div className="movie">
-      <a className=" text-decoration-none" href="/overview ">
-        <img src={IMG_API + poster_path} alt="" />
-        <div className="movie-info">
-          <h3>{title}</h3>
-          <span className={`tag ${setVoteClass(vote_average)} `}>
-            {vote_average}
-          </span>
-        </div>
-      </a>
+      <img src={IMG_API + poster_path} alt="" />
+      <div className="movie-info">
+        <h3>{title}</h3>
+        <span className={`tag ${setVoteClass(vote_average)} `}>
+          {vote_average}
+        </span>
+      </div>
 
       <div className="movie-over">
         <h2> {title}</h2>
