@@ -11,11 +11,11 @@ export default function Navbar() {
 
   if (login) {
     navbar = "navbar-2";
-    btnColor = "btn btn-outline-warning btn-lg mx-2";
+    btnColor = "btn btn-outline-warning ml-3 ";
     navBrand = "navbar-brand text-danger";
   } else {
     navbar = "navbar-1";
-    btnColor = "btn btn-outline-light btn-lg mx-2";
+    btnColor = "btn btn-outline-light ml-3 d-none";
     navBrand = "navbar-brand text-light";
   }
 
